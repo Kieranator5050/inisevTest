@@ -12,6 +12,11 @@
     <li>Configure the mail variables</li>
 </ul>
 
+<p><em>Send Emails Command</em></p>
+<ul>
+<li>Run "php artisan email:send</li>
+</ul>
+
 <h3>Endpoints</h3>
 <p>Postman Documentation is attached to the repository as inisevLaravelTest.postman_collection.json</p>
 <table>
