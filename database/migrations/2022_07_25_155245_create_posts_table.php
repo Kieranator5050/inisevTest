@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('website_id')->references('id')->on('websites')->onDelete('cascade');
             $table->string('title');
             $table->text('description');
+            $table->boolean('emailIsSent')->default(0);
         });
     }
 

@@ -19,14 +19,14 @@ class DatabaseSeeder extends Seeder
     {
         //Seed website
         $websites=collect();
-        for($i=0;$i<random_int(50,100);$i++)
+        for($i=0;$i<random_int(10,20);$i++)
         {
             $websites->push(Website::factory()->create());
         }
 
         //Create random post and subscriber data for each website
         foreach ($websites as $website){
-            for($i=0;$i<random_int(5,20);$i++)
+            for($i=0;$i<random_int(1,5);$i++)
             {
                 Post::factory()->create([
                     'website_id'=>$website
