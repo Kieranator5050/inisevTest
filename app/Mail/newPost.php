@@ -12,6 +12,8 @@ class newPost extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
+    protected $post;
+
     /**
      * Create a new message instance.
      * @param Post $post
