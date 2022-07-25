@@ -17,7 +17,8 @@ class WebsiteFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name'=>$this->faker->sentence(),
+            'url'=>$this->faker->url()
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Website;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,9 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'website_id'=>Website::factory(),
+            'title'=>$this->faker->sentence(),
+            'description'=>implode($this->faker->paragraphs(3))
         ];
     }
 }
