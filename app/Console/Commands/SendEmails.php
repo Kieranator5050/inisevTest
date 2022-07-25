@@ -30,7 +30,7 @@ class SendEmails extends Command
      */
     public function handle()
     {
-        Mail::to(['kieranjag@hotmail.com'])->send(new newPost(Post::first()));
+        //Mail::to(['kieranjag@hotmail.com'])->send(new newPost(Post::first()));
         return 0;
     }
 }
