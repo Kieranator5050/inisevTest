@@ -37,7 +37,7 @@ class SendEmails extends Command
             foreach ($newPosts as $post)
             {
                 //Caching website subscribers for an hour
-                $subscribers = cache()->remember("$post->id",60*60, function () use ($post){
+                $subscribers = cache()->remember("$post->website_id",60*60, function () use ($post){
                     return $post->website->subscribers;
                 });
 
