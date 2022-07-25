@@ -16,7 +16,7 @@ class PostController extends Controller
         //Assuming a website id is provided or obtained when a request is sent
         $validator = Validator::make($request->all(),[
             'website_id'=>['required',Rule::exists('websites','id')],
-            'title'=>['required'],
+            'title'=>['required',Rule::unique('posts','title')],
             'description'=>['required']
         ]);
 
