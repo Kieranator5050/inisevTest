@@ -29,7 +29,8 @@ class DatabaseSeeder extends Seeder
             for($i=0;$i<random_int(1,5);$i++)
             {
                 Post::factory()->create([
-                    'website_id'=>$website
+                    'website_id'=>$website,
+                    'emailIsSent'=>1
                 ]);
                 if((bool)random_int(0,1))
                 {

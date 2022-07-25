@@ -30,7 +30,24 @@ class SendEmails extends Command
      */
     public function handle()
     {
-        Mail::to(['kieranjag@hotmail.com'])->send(new newPost(Post::first()));
+        //Assuming that if a subscriber joins after a post is created the post is considered old
+        $newPosts = Post::query()->where('emailIsSent','=',0)->get() ?? false;
+        if(!$newPosts->isEmpty())
+        {
+            foreach ($newPosts as $post)
+            {
+                $subscribers = $post->website->subscribers;
+                if(!$subscribers->isEmpty())
+                {
+                    foreach ($subscribers as $subscriber)
+                    {
+                        Mail::to($subscriber->email)->send(new newPost($post));
+                    }
+                }
+                $post->emailIsSent = true;
+            }
+        }
+
         return 0;
     }
 }
