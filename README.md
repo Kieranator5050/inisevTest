@@ -14,7 +14,7 @@
 
 <p><em>Send Emails Command</em></p>
 <ul>
-<li>Run "php artisan email:send</li>
+<li>Run "php artisan email:send"</li>
 </ul>
 
 <h3>Endpoints</h3>
