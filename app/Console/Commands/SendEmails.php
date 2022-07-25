@@ -48,7 +48,7 @@ class SendEmails extends Command
                         Mail::to($subscriber->email)->send(new newPost($post));
                     }
                 }
-                $post->emailIsSent = true;
+                $post->update(['emailIsSent'=>true]);
             }
         }
 

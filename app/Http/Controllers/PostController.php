@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\PostCreated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -29,6 +30,8 @@ class PostController extends Controller
             'title'=>$request['title'],
             'description'=>$request['description']
         ]);
+
+        event(new PostCreated());
 
         return ['success'=>'Post Created'];
     }
