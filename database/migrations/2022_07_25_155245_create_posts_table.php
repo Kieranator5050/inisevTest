@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('website_id')->references('id')->on('websites')->onDelete('cascade');
+            $table->string('title');
+            $table->text('description');
         });
     }
 
