@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
 
         //Create random post and subscriber data for each website
         foreach ($websites as $website){
-            for($i=0;$i<random_int(1,5);$i++)
+            for($i=0;$i<random_int(0,5);$i++)
             {
                 Post::factory()->create([
                     'website_id'=>$website,
