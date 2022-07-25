@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class SubscriberController extends Controller
 {
-    public function create()
+    public function store()
     {
-        return "Test";
+        return ['message'=>'Test'];
     }
 }
