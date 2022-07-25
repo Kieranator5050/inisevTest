@@ -31,7 +31,7 @@ class SendEmails extends Command
     public function handle()
     {
         //Assuming that if a subscriber joins after a post is created the post is considered old
-        $newPosts = Post::query()->where('emailIsSent','=',0)->get() ?? false;
+        $newPosts = Post::query()->where('emailIsSent','=',0)->get();
         if(!$newPosts->isEmpty())
         {
             foreach ($newPosts as $post)
